@@ -2,9 +2,9 @@ name: Python package
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "1" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "1" ]
 
 jobs:
   build:
@@ -30,9 +30,9 @@ jobs:
     - name: Build executable
       run: |
         pip install pyinstaller
-        pyinstaller --onefile main.py
+        pyinstaller --onefile 1.py
     - name: Upload Artifact
       uses: actions/upload-artifact@v3
       with:
         name: exe
-        path: dist/main.exe
+        path: dist/1.exe
